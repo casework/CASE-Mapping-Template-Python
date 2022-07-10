@@ -1,3 +1,0 @@
-[console_scripts]
-dir_to_case_dict = case_mapping.dict_to_case:main
-dir_to_case_rdf = case_mapping.rdflib_to_case:main
