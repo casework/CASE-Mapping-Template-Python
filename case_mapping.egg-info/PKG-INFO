@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: case-mapping
+Version: 0.0.1
+Summary: An template repository for generating CASE files
+Home-page: https://github.com/casework/CASE-Mapping-Template
+Author: Keith Chason
+Author-email: keith.chason@cyberdomainontology.org
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # CASE Mapping Template Python
 A template repository for adopters to create CASE mappings utilizing Python.
 

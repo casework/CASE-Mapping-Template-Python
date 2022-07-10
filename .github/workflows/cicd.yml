@@ -1,0 +1,53 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: 
+      - main
+      - develop
+  pull_request:
+    branches: 
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: 
+          - '3.7'
+          - '3.10'
+
+    steps:
+    # Checkout the repository for processing
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+  
+    # Setup the matrixed version of Python for testing
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    # Run pre-commit checks for syntax compliance
+    - name: Pre-Commit Checks
+      run: |
+        pip -q install pre-commit
+        pre-commit run --all-files
+    
+    # Build the modules and run them against the example directory to generate 
+    # the CASE outputs
+    - name: Build CASE
+      run: |
+        python setup.py install
+        mkdir -p ./output/
+        dir_to_case_dict ./data/ ./output/dict-case.json
+
+    # Test the output files to confirm they're both conformant to the CASE Ontology
+    - name: CASE Validation
+      uses: kchason/case-validation-action@v2.2
+      with:
+        case-path: ./output/
+        case-version: "case-0.7.0"
+  

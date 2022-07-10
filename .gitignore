@@ -1,0 +1,11 @@
+*.done.log
+*.swp
+.DS_Store
+.idea/
+venv/
+.venv-pre-commit/
+__pycache__
+build/
+case_utils.egg-info/
+dist/
+output/
