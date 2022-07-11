@@ -34,7 +34,7 @@ def main():
 
             # Write the CASE graph to a file
             with open(output_path, "w") as case_file:
-                case_file.write(g.serialize(format="turtle"))
+                case_file.write(g.serialize(format="json-ld", indent=4))
                 print(f"CASE graph exported to: {output_path}")
 
             sys.exit(0)
