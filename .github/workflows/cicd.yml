@@ -42,7 +42,7 @@ jobs:
       run: |
         python setup.py install
         mkdir -p ./output/
-        dir_to_case_dict ./data/ ./output/dict-case.json
+        dir_to_case_dict ./output/dict-case.json
 
     # Test the output files to confirm they're both conformant to the CASE Ontology
     - name: CASE Validation
