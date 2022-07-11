@@ -30,7 +30,7 @@ def main():
         "@graph": [],
     }
 
-    # Process the command line arguments to get the input and output paths
+    # Process the command line arguments to get the output path
     if len(sys.argv) > 1:
         output_path = sys.argv[1]
 
@@ -49,15 +49,14 @@ def main():
             # Write the CASE graph to a file
             with open(output_path, "w") as case_file:
                 json.dump(case, case_file, ensure_ascii=False, indent=4)
+                print(f"CASE graph exported to: {output_path}")
 
-            # TODO print output path
             sys.exit(0)
-
         else:
             print("The output path is not valid")
             sys.exit(1)
     else:
-        print(f"Insufficient arguments. Usage is {sys.argv[0]} input_path output_path")
+        print(f"Insufficient arguments. Usage is {sys.argv[0]} output_path")
         sys.exit(1)
 
 
