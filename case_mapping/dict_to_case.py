@@ -4,14 +4,14 @@ import sys
 from .utilities import is_valid_path
 
 
-def main():
+def main() -> None:
     """
     The main entrypoint for the script that takes a directory path and lists
     the contained files into a CASE JSON-LD file.
     """
 
     # Initialize the basic CASE graph that will have the files appended
-    case = {
+    case: dict = {
         "@context": {
             "case-investigation": "https://ontology.caseontology.org/case/investigation/",
             "kb": "http://example.org/kb/",
@@ -32,7 +32,7 @@ def main():
 
     # Process the command line arguments to get the output path
     if len(sys.argv) > 1:
-        output_path = sys.argv[1]
+        output_path: str = sys.argv[1]
 
         # Check if paths are valid
         if is_valid_path(output_path):
@@ -53,7 +53,7 @@ def main():
 
             sys.exit(0)
         else:
-            print("The output path is not valid")
+            print(f"The output path is not valid: {output_path}")
             sys.exit(1)
     else:
         print(f"Insufficient arguments. Usage is {sys.argv[0]} output_path")

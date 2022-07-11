@@ -9,18 +9,20 @@ from .utilities import is_valid_path
 def main():
     # Process the command line arguments to get the output path
     if len(sys.argv) > 1:
-        output_path = sys.argv[1]
+        output_path: str = sys.argv[1]
 
         # Check if paths are valid
         if is_valid_path(output_path):
-            g = Graph()
+            g: Graph = Graph()
             g.bind("uco-core", "https://ontology.unifiedcyberontology.org/uco/core/")
             g.bind(
                 "uco-identity",
                 "https://ontology.unifiedcyberontology.org/uco/identity/",
             )
 
-            ns_core = Namespace("https://ontology.unifiedcyberontology.org/uco/core/")
+            ns_core: Namespace = Namespace(
+                "https://ontology.unifiedcyberontology.org/uco/core/"
+            )
 
             g.add(
                 (
@@ -39,7 +41,7 @@ def main():
 
             sys.exit(0)
         else:
-            print("The output path is not valid")
+            print(f"The output path is not valid: {output_path}")
             sys.exit(1)
     else:
         print(f"Insufficient arguments. Usage is {sys.argv[0]} output_path")
