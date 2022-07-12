@@ -46,7 +46,7 @@ jobs:
         case_from_rdf ./output/rdf-case.json
 
     # Test the output files to confirm they both exist and contain at least one triple
-    - name: Build CASE
+    - name: Run Pytest
       run: |
         pip -q install pytest
         pytest -v
