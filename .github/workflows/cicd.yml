@@ -45,10 +45,15 @@ jobs:
         case_from_dict ./output/dict-case.json
         case_from_rdf ./output/rdf-case.json
 
+    # Test the output files to confirm they both exist and contain at least one triple
+    - name: Build CASE
+      run: |
+        pip -q install pytest
+        pytest -v
+
     # Test the output files to confirm they're both conformant to the CASE Ontology
     - name: CASE Validation
       uses: kchason/case-validation-action@v2.2
       with:
         case-path: ./output/
         case-version: "case-0.7.0"
-  
