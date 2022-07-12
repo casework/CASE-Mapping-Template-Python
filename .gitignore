@@ -6,6 +6,6 @@ venv/
 .venv-pre-commit/
 __pycache__
 build/
-case_mapping.egg-info/
+case_example_mapping.egg-info/
 dist/
 output/
