@@ -1,7 +1,6 @@
 import json
+import os
 import sys
-
-from .utilities import is_valid_path
 
 
 def main() -> None:
@@ -35,7 +34,9 @@ def main() -> None:
         output_path: str = sys.argv[1]
 
         # Check if paths are valid
-        if is_valid_path(output_path):
+        if not os.path.isdir(output_path) and os.path.exists(
+            os.path.dirname(output_path)
+        ):
 
             # Add an uco-observable:ObservableObject to the graph
             case["@graph"].append(

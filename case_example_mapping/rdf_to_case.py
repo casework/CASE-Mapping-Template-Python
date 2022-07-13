@@ -1,9 +1,8 @@
+import os
 import sys
 
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import XSD
-
-from .utilities import is_valid_path
 
 
 def main():
@@ -12,7 +11,9 @@ def main():
         output_path: str = sys.argv[1]
 
         # Check if paths are valid
-        if is_valid_path(output_path):
+        if not os.path.isdir(output_path) and os.path.exists(
+            os.path.dirname(output_path)
+        ):
             g: Graph = Graph()
             g.bind("uco-core", "https://ontology.unifiedcyberontology.org/uco/core/")
             g.bind(
