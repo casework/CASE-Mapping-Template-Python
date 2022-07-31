@@ -34,7 +34,7 @@ def main() -> None:
         sys.exit(1)
     output_path: str = sys.argv[1]
 
-    # Add an uco-observable:ObservableObject to the graph
+    # Add a uco-identity:Organization to the graph
     case["@graph"].append(
         {
             "@id": "kb:organization-2b3b98e2-aea2-4270-876a-7f9917623cb6",
