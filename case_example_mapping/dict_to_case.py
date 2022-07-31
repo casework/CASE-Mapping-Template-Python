@@ -29,31 +29,30 @@ def main() -> None:
     }
 
     # Process the command line arguments to get the output path
-    if len(sys.argv) > 1:
-        output_path: str = sys.argv[1]
-
-        # Add an uco-observable:ObservableObject to the graph
-        case["@graph"].append(
-            {
-                "@id": "kb:organization-2b3b98e2-aea2-4270-876a-7f9917623cb6",
-                "@type": "uco-identity:Organization",
-                "uco-core:name": "Cyber Domain Ontology",
-            }
-        )
-
-        # Write the CASE graph to a file
-        try:
-            with open(output_path, "w") as case_file:
-                json.dump(case, case_file, ensure_ascii=False, indent=4)
-                print(f"CASE graph exported to: {output_path}")
-        except IOError:
-            print(f"Error writing to path: {output_path}")
-            sys.exit(1)
-
-        sys.exit(0)
-    else:
+    if len(sys.argv) == 1:
         print(f"Insufficient arguments. Usage is {sys.argv[0]} output_path")
         sys.exit(1)
+    output_path: str = sys.argv[1]
+
+    # Add an uco-observable:ObservableObject to the graph
+    case["@graph"].append(
+        {
+            "@id": "kb:organization-2b3b98e2-aea2-4270-876a-7f9917623cb6",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Cyber Domain Ontology",
+        }
+    )
+
+    # Write the CASE graph to a file
+    try:
+        with open(output_path, "w") as case_file:
+            json.dump(case, case_file, ensure_ascii=False, indent=4)
+            print(f"CASE graph exported to: {output_path}")
+    except IOError:
+        print(f"Error writing to path: {output_path}")
+        sys.exit(1)
+
+    sys.exit(0)
 
 
 if __name__ == "__main__":
