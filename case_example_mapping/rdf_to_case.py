@@ -4,7 +4,7 @@ from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import XSD
 
 
-def main():
+def main() -> None:
     # Process the command line arguments to get the output path
     if len(sys.argv) == 1:
         print(f"Insufficient arguments. Usage is {sys.argv[0]} output_path")
