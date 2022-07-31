@@ -5,7 +5,7 @@ from rdflib import Graph
 
 
 class CASEOutputTests(unittest.TestCase):
-    def test_graphs_exist(self):
+    def test_graphs_exist(self) -> None:
         """
         Identifies all CASE graph files within the ./output directory and ensures there
         are at least two.
@@ -19,7 +19,7 @@ class CASEOutputTests(unittest.TestCase):
         # Ensure there were two graph files as expected
         self.assertEqual(2, len(files))
 
-    def test_triples_exist(self):
+    def test_triples_exist(self) -> None:
         """
         Identifies all CASE graph files within the ./output directory and ensures they
         contain at least one triple.
