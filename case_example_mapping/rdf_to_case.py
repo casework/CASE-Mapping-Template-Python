@@ -1,7 +1,7 @@
 import sys
 
 from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import XSD
+from rdflib.namespace import RDF, XSD
 
 
 def main() -> None:
@@ -22,11 +22,28 @@ def main() -> None:
         "https://ontology.unifiedcyberontology.org/uco/core/"
     )
 
+    ns_kb: Namespace = Namespace("http://example.org/kb/")
+
+    # Define an individual.
+    # RDFLib Namespace provides two ways to create a URIRef of the
+    # namespace as a string-prefix concatenated with an argument:
+    # * The . operator.
+    # * The [] operator.
+    iri_my_organization = ns_kb["organization-b1534f63-b1c3-4b5c-a937-cbe7077571f2"]
+
     g.add(
         (
+            iri_my_organization,
+            RDF.type,
             URIRef(
                 "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
             ),
+        )
+    )
+
+    g.add(
+        (
+            iri_my_organization,
             ns_core.name,
             Literal("Cyber Domain Ontology", datatype=XSD.string),
         )
