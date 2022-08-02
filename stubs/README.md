@@ -1,0 +1,1 @@
+This directory contains stub JSON-LD objects, with the entirety of their possible properties that could be populated listed, but assigned as null.  Node `@id`s are also left as the null UUID-0, and should be replaced with UUIDs.

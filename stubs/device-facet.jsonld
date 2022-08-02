@@ -1,0 +1,14 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/"
+    },
+    "@graph": [
+        "@id": "kb:00000000-0000-0000-0000-000000000000",
+        "@type": "uco-observable:DeviceFacet",
+        "uco-observable:deviceType": null,
+        "uco-observable:manufacturer": null,
+        "uco-observable:model": null,
+        "uco-observable:serialNumber": null
+    ]
+}

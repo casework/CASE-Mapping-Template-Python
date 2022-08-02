@@ -1,0 +1,19 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/"
+    },
+    "@graph": [
+        "@id": "kb:00000000-0000-0000-0000-000000000000",
+        "@type": "uco-observable:Device",
+        "uco-core:createdBy": null,
+        "uco-core:description": null,
+        "uco-core:hasFacet": [],
+        "uco-core:modifiedTime": null,
+        "uco-core:name": null,
+        "uco-core:objectCreatedTime": null,
+        "uco-core:objectMarking": null,
+        "uco-core:tag": null
+    ]
+}
