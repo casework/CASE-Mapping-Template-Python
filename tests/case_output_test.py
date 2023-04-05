@@ -28,7 +28,6 @@ class CASEOutputTests(unittest.TestCase):
         source_directory: str = "./output"
         for file in os.listdir(source_directory):
             if file.endswith(".json") or file.endswith(".jsonld"):
-
                 # Parse the graph to count the number of triples and make sure they
                 # both contain at least one triple
                 g: Graph = Graph()
