@@ -1,5 +1,6 @@
 import json
 import sys
+from typing import Any
 
 
 def main() -> None:
@@ -9,7 +10,7 @@ def main() -> None:
     """
 
     # Initialize the basic CASE graph that will have the files appended
-    case: dict = {
+    case: dict[str, Any] = {
         "@context": {
             "case-investigation": "https://ontology.caseontology.org/case/investigation/",
             "kb": "http://example.org/kb/",

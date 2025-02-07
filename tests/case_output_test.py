@@ -3,6 +3,7 @@ import unittest
 from typing import Set
 
 from rdflib import Graph, URIRef
+from rdflib.query import ResultRow
 
 
 class CASEOutputTests(unittest.TestCase):
@@ -11,7 +12,7 @@ class CASEOutputTests(unittest.TestCase):
         Identifies all CASE graph files within the ./output directory and ensures there
         are at least two.
         """
-        files: list = []
+        files: list[str] = []
         source_directory: str = "./output"
         for file in os.listdir(source_directory):
             if file.endswith(".json") or file.endswith(".jsonld"):
@@ -68,6 +69,8 @@ WHERE {
             g: Graph = Graph()
             g.parse(os.path.join(source_directory, file))
             for result in g.query(query):
+                assert isinstance(result, ResultRow)
+                assert isinstance(result[0], URIRef)
                 # Graph.query for a SELECT query returns a tuple, with
                 # member count as long as the number of bound variables.
                 computed.add(result[0])
