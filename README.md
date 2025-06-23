@@ -1,5 +1,5 @@
 [![Continuous Integration](https://github.com/casework/CASE-Mapping-Template-Python/actions/workflows/cicd.yml/badge.svg)](https://github.com/casework/CASE-Mapping-Template-Python/actions/workflows/cicd.yml)
-![CASE Version](https://img.shields.io/badge/CASE%20Version-1.3.0-green)
+![CASE Version](https://img.shields.io/badge/CASE%20Version-1.4.0-green)
 
 # CASE Mapping Template Python
 A template repository for adopters to create CASE mappings utilizing Python.
